@@ -83,7 +83,7 @@ AS
     END IF;
   EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
-      RAISE_APPLICATION_ERROR (-20001, 'DUBLICATE VALUES .');
+      RAISE_APPLICATION_ERROR (-20001, 'Попытка вставки дублирующегося значения ключа.');
     WHEN OTHERS THEN
       RAISE;
   END ins;
@@ -108,7 +108,7 @@ AS
       DELETE FROM EMPLOYEES
         WHERE EMPLOYEE_ID = p_id;
     ELSE
-      RAISE_APPLICATION_ERROR (-20992, 'Record not found for DELETE!');
+      RAISE_APPLICATION_ERROR (-20992, 'Не нвйдена запись для удаления!');
     END IF;
   END del;
 
